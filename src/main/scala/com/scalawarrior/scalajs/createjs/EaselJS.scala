@@ -1,4 +1,4 @@
-package importedjs.createjs
+package com.scalawarrior.scalajs.createjs
 
 import org.scalajs.dom.raw._
 import scala.scalajs.js

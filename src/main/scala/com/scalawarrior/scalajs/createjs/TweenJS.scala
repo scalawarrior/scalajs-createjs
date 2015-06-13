@@ -1,4 +1,4 @@
-package importedjs.createjs
+package com.scalawarrior.scalajs.createjs
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
