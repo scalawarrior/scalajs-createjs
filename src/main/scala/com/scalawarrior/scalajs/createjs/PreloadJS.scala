@@ -66,7 +66,7 @@ object BinaryLoader extends js.Object {
 }
 
 @JSName("createjs.CSSLoader")
-class CSSLoader extends js.Object {
+class CSSLoader protected () extends js.Object {
   def this(loadItem: Object, preferXHR: Boolean) = this()
   def canLoadItem(item: Object): Boolean = js.native
 }

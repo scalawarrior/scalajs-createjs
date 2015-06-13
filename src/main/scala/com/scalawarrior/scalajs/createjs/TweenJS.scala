@@ -70,7 +70,7 @@ object MotionGuidePlugin extends js.Object {
 }
 
 @JSName("createjs.Timeline")
-class Timeline extends EventDispatcher {
+class Timeline protected () extends EventDispatcher {
   def this(tweens: js.Array[Tween], labels: Object, props: Object) = this()
   var duration: Double = js.native
   var ignoreGlobalPause: Boolean = js.native
@@ -92,7 +92,7 @@ class Timeline extends EventDispatcher {
 }
 
 @JSName("createjs.Tween")
-class Tween extends EventDispatcher {
+class Tween protected () extends EventDispatcher {
   def this(target: Object, props: Object = ???, pluginData: Object = ???) = this()
   var duration: Double = js.native
   var ignoreGlobalPause: Boolean = js.native

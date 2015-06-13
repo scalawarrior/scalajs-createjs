@@ -350,7 +350,7 @@ object Matrix2D extends js.Object {
 }
 
 @JSName("createjs.MouseEvent")
-class MouseEvent extends Event {
+class MouseEvent protected () extends Event {
   def this(`type`: String, bubbles: Boolean, cancelable: Boolean, stageX: Double, stageY: Double, nativeEvent: NativeMouseEvent, pointerID: Double, primary: Boolean, rawX: Double, rawY: Double) = this()
   var isTouch: Boolean = js.native
   var localX: Double = js.native
