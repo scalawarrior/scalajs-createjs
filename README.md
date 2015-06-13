@@ -13,7 +13,7 @@ resolvers += "amateras-repo" at "http://amateras.sourceforge.jp/mvn-snapshot/"
 
 libraryDependencies += "com.scalawarrior" %%% "scalajs-createjs" % "0.0.1-SNAPSHOT"
 ```
-and add an import statement to your Scala.js program.
+and add following import statement to the head of your Scala.js program:
 
 ```scala
 import com.scalawarrior.scalajs.createjs._
