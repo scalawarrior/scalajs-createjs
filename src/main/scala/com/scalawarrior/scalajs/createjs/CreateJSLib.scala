@@ -48,23 +48,23 @@ class Event protected () extends js.Object {
   override def toString(): String = js.native
 }
 
-//@JSName("createjs.EventDispatcher")
-//class EventDispatcher extends js.Object {
-//  def addEventListener(`type`: String, listener: js.Function1[Object, Boolean], useCapture: Boolean = ???): js.Function = js.native
-//  def addEventListener(`type`: String, listener: js.Any, useCapture: Boolean = ???): Object = js.native
-//  def dispatchEvent(eventObj: Object, target: Object = ???): Boolean = js.native
-//  def hasEventListener(`type`: String): Boolean = js.native
-//  def off(`type`: String, listener: js.Function1[Object, Boolean], useCapture: Boolean = ???): Unit = js.native
-//  def on(`type`: String, listener: js.Function1[Object, Boolean], scope: Object = ???, once: Boolean = ???, data: js.Any = ???, useCapture: Boolean = ???): js.Function = js.native
-//  def on(`type`: String, listener: js.Any, scope: Object = ???, once: Boolean = ???, data: js.Any = ???, useCapture: Boolean = ???): Object = js.native
-//  def removeAllEventListeners(`type`: String = ???): Unit = js.native
-//  def removeEventListener(`type`: String, listener: js.Function1[Object, Boolean], useCapture: Boolean = ???): Unit = js.native
-//  override def toString(): String = js.native
-//  def willTrigger(`type`: String): Boolean = js.native
-//}
-
-//@JSName("createjs")
 @JSName("createjs.EventDispatcher")
 class EventDispatcher extends js.Object {
-  def initialize(target: Object): Unit = js.native
+ def addEventListener(`type`: String, listener: js.Function1[Object, Boolean], useCapture: Boolean = ???): js.Function = js.native
+ //def addEventListener(`type`: String, listener: js.Any, useCapture: Boolean = ???): Object = js.native
+ def dispatchEvent(eventObj: Object, target: Object = ???): Boolean = js.native
+ def hasEventListener(`type`: String): Boolean = js.native
+ def off(`type`: String, listener: js.Function1[Object, Boolean], useCapture: Boolean = ???): Unit = js.native
+ def on(`type`: String, listener: js.Function1[Object, Boolean], scope: Object = ???, once: Boolean = ???, data: js.Any = ???, useCapture: Boolean = ???): js.Function = js.native
+ //def on(`type`: String, listener: js.Any, scope: Object = ???, once: Boolean = ???, data: js.Any = ???, useCapture: Boolean = ???): Object = js.native
+ def removeAllEventListeners(`type`: String = ???): Unit = js.native
+ def removeEventListener(`type`: String, listener: js.Function1[Object, Boolean], useCapture: Boolean = ???): Unit = js.native
+ override def toString(): String = js.native
+ def willTrigger(`type`: String): Boolean = js.native
 }
+
+// //@JSName("createjs")
+// @JSName("createjs.EventDispatcher")
+// class EventDispatcher extends js.Object {
+//   def initialize(target: Object): Unit = js.native
+// }

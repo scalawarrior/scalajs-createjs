@@ -572,7 +572,7 @@ object SpriteStage extends js.Object {
 
 @JSName("createjs.Stage")
 class Stage protected () extends Container {
-  def this(canvas: HTMLCanvasElement) = this()
+  def this(canvas: String) = this()
   var autoClear: Boolean = js.native
   var canvas: HTMLCanvasElement = js.native
   var drawRect: Rectangle = js.native
