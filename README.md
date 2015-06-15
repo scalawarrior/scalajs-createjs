@@ -29,7 +29,7 @@ val h = stage.canvas.height
 
 // Define images
 val manifest = js.Array(
-  js.Dictionary("src" -> "dummy.png", "id" -> "dummy"),
+  js.Dictionary("src" -> "background.png", "id" -> "background"),
   js.Dictionary("src" -> "knight.png", "id" -> "knight")
 )
 
@@ -38,7 +38,7 @@ val loader = new LoadQueue(false)
 loader.addEventListener("complete", (e: Object) => {
   // Assemble shapes on the stage
   val background = new Shape()
-  background.graphics.beginBitmapFill(loader.getResult("dummy")).drawRect(0, 0, w, h)
+  background.graphics.beginBitmapFill(loader.getResult("background")).drawRect(0, 0, w, h)
 
   var spriteSheet = new SpriteSheet(js.Dictionary(
     "framerate" -> 30,
