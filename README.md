@@ -20,3 +20,35 @@ import com.scalawarrior.scalajs.createjs._
 ```
 
 then enjoy CreateJS in Scala.js!
+
+```scala
+// Declare the stage
+val stage = new Stage("demoCanvas")
+val w = stage.canvas.width
+val h = stage.canvas.height
+
+// Define images
+val manifest = js.Array(
+  js.Dictionary("src" -> "dummy.png", "id" -> "dummy"),
+  js.Dictionary("src" -> "knight.png", "id" -> "knight")
+)
+
+// Pre-load images
+val loader = new LoadQueue(false)
+loader.addEventListener("complete", (e: Object) => {
+  // Assemble shapes on the stage
+  val background = new Shape()
+  background.graphics.beginBitmapFill(loader.getResult("dummy")).drawRect(0, 0, w, h)
+
+  var spriteSheet = new SpriteSheet(js.Dictionary(
+    "framerate" -> 30,
+    "images"    -> js.Array(loader.getResult("knight")),
+    "frames"    -> js.Dictionary("regX" -> -70, "height" -> 88, "count" -> 64, "regY" -> -60, "width" -> 74)
+  ))
+  val knight = new Sprite(spriteSheet);
+
+  stage.addChild(background, knight);
+  stage.update();
+  true
+}
+```
