@@ -10,21 +10,25 @@ class NativeMouseEvent extends MouseEvent {
 @JSName("createjs.AlphaMapFilter")
 class AlphaMapFilter protected () extends Filter {
   def this(alphaMap: HTMLImageElement) = this()
-  var alphaMap: HTMLImageElement = js.native
+  var alphaMap: HTMLImageElement = js.native // TODO or HTMLCanvasElement
   override def clone(): AlphaMapFilter = js.native
 }
 
 @JSName("createjs.AlphaMaskFilter")
 class AlphaMaskFilter protected () extends Filter {
   def this(mask: HTMLImageElement) = this()
-  var mask: HTMLImageElement = js.native
+  def this(mask: HTMLCanvasElement) = this()
+  var mask: HTMLImageElement = js.native // TODO or HTMLCanvasElement
   override def clone(): AlphaMaskFilter = js.native
 }
 
 @JSName("createjs.Bitmap")
 class Bitmap protected () extends DisplayObject {
   def this(imageOrUrl: HTMLImageElement) = this()
-  var image: HTMLImageElement = js.native
+  def this(imageOrUrl: HTMLCanvasElement) = this()
+  def this(imageOrUrl: HTMLVideoElement) = this()
+  def this(imageOrUrl: String) = this()
+  var image: HTMLImageElement = js.native // TODO or HTMLCanvasElement | HTMLVideoElement
   var sourceRect: Rectangle = js.native
   override def clone(): Bitmap = js.native
 }
@@ -56,11 +60,11 @@ class BlurFilter protected () extends Filter {
 @JSName("createjs.ButtonHelper")
 class ButtonHelper protected () extends js.Object {
   def this(target: Sprite, outLabel: String = ???, overLabel: String = ???, downLabel: String = ???, play: Boolean = ???, hitArea: DisplayObject = ???, hitLabel: String = ???) = this()
-  var downLabel: String = js.native
-  var outLabel: String = js.native
-  var overLabel: String = js.native
+  var downLabel: String = js.native // TODO or Double
+  var outLabel: String = js.native // TODO or Double
+  var overLabel: String = js.native // TODO or Double
   var play: Boolean = js.native
-  var target: Sprite = js.native
+  var target: Sprite = js.native // TODO or MovieClip
   var enabled: Boolean = js.native
   def setEnabled(value: Boolean): Unit = js.native
   def getEnabled(): Boolean = js.native
@@ -101,7 +105,8 @@ class ColorMatrix protected () extends js.Object {
 @JSName("createjs.ColorMatrixFilter")
 class ColorMatrixFilter protected () extends Filter {
   def this(matrix: js.Array[Double]) = this()
-  var matrix: js.Array[Double] = js.native
+  def this(matrix: ColorMatrix) = this()
+  var matrix: js.Array[Double] = js.native // TODO or ColorMatrix
   override def clone(): ColorMatrixFilter = js.native
 }
 
@@ -134,7 +139,7 @@ class Container extends DisplayObject {
 @JSName("createjs.DisplayObject")
 class DisplayObject extends EventDispatcher {
   var alpha: Double = js.native
-  var cacheCanvas: HTMLCanvasElement = js.native
+  var cacheCanvas: HTMLCanvasElement = js.native // TODO or Object
   var cacheID: Double = js.native
   var compositeOperation: String = js.native
   var cursor: String = js.native
@@ -175,7 +180,7 @@ class DisplayObject extends EventDispatcher {
   def isVisible(): Boolean = js.native
   def localToGlobal(x: Double, y: Double, pt: Point = ???): Point = js.native
   def localToLocal(x: Double, y: Double, target: DisplayObject, pt: Point = ???): Point = js.native
-  def set(props: Object): DisplayObject = js.native
+  def set(props: AnyRef): DisplayObject = js.native
   def setBounds(x: Double, y: Double, width: Double, height: Double): Unit = js.native
   def setTransform(x: Double = ???, y: Double = ???, scaleX: Double = ???, scaleY: Double = ???, rotation: Double = ???, skewX: Double = ???, skewY: Double = ???, regX: Double = ???, regY: Double = ???): DisplayObject = js.native
   def uncache(): Unit = js.native
@@ -208,7 +213,7 @@ class DOMElement protected () extends DisplayObject {
   def this(htmlElement: HTMLElement) = this()
   var htmlElement: HTMLElement = js.native
   override def clone(): DisplayObject = js.native
-  override def set(props: Object): DOMElement = js.native
+  override def set(props: AnyRef): DOMElement = js.native
   override def setTransform(x: Double = ???, y: Double = ???, scaleX: Double = ???, scaleY: Double = ???, rotation: Double = ???, skewX: Double = ???, skewY: Double = ???, regX: Double = ???, regY: Double = ???): DOMElement = js.native
 }
 
@@ -233,12 +238,12 @@ class Filter extends js.Object {
 @JSName("createjs.Graphics")
 class Graphics extends js.Object {
   var command: Object = js.native
-  var instructions: js.Array[Object] = js.native
-  def append(command: Object, clean: Boolean = ???): Graphics = js.native
+  var instructions: js.Array[AnyRef] = js.native
+  def append(command: AnyRef, clean: Boolean = ???): Graphics = js.native
   def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean): Graphics = js.native
   def arcTo(x1: Double, y1: Double, x2: Double, y2: Double, radius: Double): Graphics = js.native
-  def beginBitmapFill(image: Object, repetition: String = ???, matrix: Matrix2D = ???): Graphics = js.native
-  def beginBitmapStroke(image: Object, repetition: String = ???): Graphics = js.native
+  def beginBitmapFill(image: AnyRef, repetition: String = ???, matrix: Matrix2D = ???): Graphics = js.native
+  def beginBitmapStroke(image: AnyRef, repetition: String = ???): Graphics = js.native
   def beginFill(color: String): Graphics = js.native
   def beginLinearGradientFill(colors: js.Array[String], ratios: js.Array[Double], x0: Double, y0: Double, x1: Double, y1: Double): Graphics = js.native
   def beginLinearGradientStroke(colors: js.Array[String], ratios: js.Array[Double], x0: Double, y0: Double, x1: Double, y1: Double): Graphics = js.native
@@ -261,7 +266,7 @@ class Graphics extends js.Object {
   def drawRoundRectComplex(x: Double, y: Double, w: Double, h: Double, radiusTL: Double, radiusTR: Double, radiusBR: Double, radisBL: Double): Graphics = js.native
   def endFill(): Graphics = js.native
   def endStroke(): Graphics = js.native
-  def getInstructions(): js.Array[Object] = js.native
+  def getInstructions(): js.Array[AnyRef] = js.native
   def inject(callback: js.Function1[js.Any, Any], data: js.Any): Graphics = js.native
   def isEmpty(): Boolean = js.native
   def lineTo(x: Double, y: Double): Graphics = js.native
@@ -274,8 +279,8 @@ class Graphics extends js.Object {
   def unstore(): Graphics = js.native
   def a(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean): Graphics = js.native
   def at(x1: Double, y1: Double, x2: Double, y2: Double, radius: Double): Graphics = js.native
-  def bf(image: Object, repetition: String = ???, matrix: Matrix2D = ???): Graphics = js.native
-  def bs(image: Object, repetition: String = ???): Graphics = js.native
+  def bf(image: AnyRef, repetition: String = ???, matrix: Matrix2D = ???): Graphics = js.native
+  def bs(image: AnyRef, repetition: String = ???): Graphics = js.native
   def f(color: String): Graphics = js.native
   def lf(colors: js.Array[String], ratios: js.Array[Double], x0: Double, y0: Double, x1: Double, y1: Double): Graphics = js.native
   def ls(colors: js.Array[String], ratios: js.Array[Double], x0: Double, y0: Double, x1: Double, y1: Double): Graphics = js.native
@@ -303,7 +308,7 @@ class Graphics extends js.Object {
 
 @JSName("createjs.Graphics")
 object Graphics extends js.Object {
-  var BASE_64: Object = js.native
+  var BASE_64: AnyRef = js.native
   //var beginCmd: Graphics.BeginPath = js.native
   var STROKE_CAPS_MAP: js.Array[String] = js.native
   var STROKE_JOINTS_MAP: js.Array[String] = js.native
@@ -326,7 +331,7 @@ class Matrix2D protected () extends js.Object {
   override def clone(): Matrix2D = js.native
   def copy(matrix: Matrix2D): Matrix2D = js.native
   def decompose(): js.Any = js.native
-  def decompose(target: Object): Matrix2D = js.native
+  def decompose(target: AnyRef): Matrix2D = js.native
   def equals(matrix: Matrix2D): Boolean = js.native
   def identity(): Matrix2D = js.native
   def invert(): Matrix2D = js.native
@@ -363,29 +368,29 @@ class MouseEvent protected () extends Event {
   var stageX: Double = js.native
   var stageY: Double = js.native
   override def clone(): MouseEvent = js.native
-  def addEventListener(`type`: String, listener: js.Function1[Object, Boolean], useCapture: Boolean = ???): js.Function = js.native
+  def addEventListener(`type`: String, listener: js.Function1[AnyRef, Boolean], useCapture: Boolean = ???): js.Function = js.native
   //def addEventListener(`type`: String, listener: js.Any, useCapture: Boolean = ???): Object = js.native
-  def dispatchEvent(eventObj: Object, target: Object = ???): Boolean = js.native
+  def dispatchEvent(eventObj: AnyRef, target: AnyRef = ???): Boolean = js.native
   def hasEventListener(`type`: String): Boolean = js.native
-  def off(`type`: String, listener: js.Function1[Object, Boolean], useCapture: Boolean = ???): Unit = js.native
-  def on(`type`: String, listener: js.Function1[Object, Boolean], scope: Object = ???, once: Boolean = ???, data: js.Any = ???, useCapture: Boolean = ???): js.Function = js.native
+  def off(`type`: String, listener: js.Function1[AnyRef, Boolean], useCapture: Boolean = ???): Unit = js.native
+  def on(`type`: String, listener: js.Function1[AnyRef, Boolean], scope: AnyRef = ???, once: Boolean = ???, data: js.Any = ???, useCapture: Boolean = ???): js.Function = js.native
   //def on(`type`: String, listener: js.Any, scope: Object = ???, once: Boolean = ???, data: js.Any = ???, useCapture: Boolean = ???): Object = js.native
   def removeAllEventListeners(`type`: String = ???): Unit = js.native
-  def removeEventListener(`type`: String, listener: js.Function1[Object, Boolean], useCapture: Boolean = ???): Unit = js.native
+  def removeEventListener(`type`: String, listener: js.Function1[AnyRef, Boolean], useCapture: Boolean = ???): Unit = js.native
   override def toString(): String = js.native
   def willTrigger(`type`: String): Boolean = js.native
 }
 
 @JSName("createjs.MovieClip")
 class MovieClip protected () extends Container {
-  def this(mode: String = ???, startPosition: Double = ???, loop: Boolean = ???, labels: Object = ???) = this()
+  def this(mode: String = ???, startPosition: Double = ???, loop: Boolean = ???, labels: AnyRef = ???) = this()
   var actionsEnabled: Boolean = js.native
   var autoReset: Boolean = js.native
   var currentFrame: Double = js.native
   var currentLabel: String = js.native
   var frameBounds: js.Array[Rectangle] = js.native
   var framerate: Double = js.native
-  var labels: js.Array[Object] = js.native
+  var labels: js.Array[AnyRef] = js.native
   var loop: Boolean = js.native
   var mode: String = js.native
   var paused: Boolean = js.native
@@ -394,7 +399,7 @@ class MovieClip protected () extends Container {
   def advance(time: Double = ???): Unit = js.native
   override def clone(): MovieClip = js.native
   def getCurrentLabel(): String = js.native
-  def getLabels(): js.Array[Object] = js.native
+  def getLabels(): js.Array[AnyRef] = js.native
   def gotoAndPlay(positionOrLabel: String): Unit = js.native
   def gotoAndStop(positionOrLabel: String): Unit = js.native
   def play(): Unit = js.native
@@ -412,7 +417,7 @@ object MovieClip extends js.Object {
 
 @JSName("createjs.MovieClipPlugin")
 class MovieClipPlugin extends js.Object {
-  def tween(tween: Tween, prop: String, value: String, startValues: js.Array[js.Any], endValues: js.Array[js.Any], ratio: Double, wait: Object, end: Object): Unit = js.native
+  def tween(tween: Tween, prop: String, value: String, startValues: js.Array[js.Any], endValues: js.Array[js.Any], ratio: Double, wait: AnyRef, end: AnyRef): Unit = js.native
 }
 
 @JSName("createjs.Point")
@@ -466,7 +471,7 @@ class Shape protected () extends DisplayObject {
   def this(graphics: Graphics = ???) = this()
   var graphics: Graphics = js.native
   def clone(recursive: Boolean = ???): Shape = js.native
-  override def set(props: Object): Shape = js.native
+  override def set(props: AnyRef): Shape = js.native
   override def setTransform(x: Double = ???, y: Double = ???, scaleX: Double = ???, scaleY: Double = ???, rotation: Double = ???, skewX: Double = ???, skewY: Double = ???, regX: Double = ???, regY: Double = ???): Shape = js.native
 }
 
@@ -486,7 +491,7 @@ class Sprite protected () extends DisplayObject {
   def gotoAndPlay(frameOrAnimation: String): Unit = js.native
   def gotoAndStop(frameOrAnimation: String): Unit = js.native
   def play(): Unit = js.native
-  override def set(props: Object): Sprite = js.native
+  override def set(props: AnyRef): Sprite = js.native
   override def setTransform(x: Double = ???, y: Double = ???, scaleX: Double = ???, scaleY: Double = ???, rotation: Double = ???, skewX: Double = ???, skewY: Double = ???, regX: Double = ???, regY: Double = ???): Sprite = js.native
   def stop(): Unit = js.native
 }
@@ -511,7 +516,7 @@ trait SpriteSheetFrame extends js.Object {
 
 @JSName("createjs.SpriteSheet")
 class SpriteSheet protected () extends EventDispatcher {
-  def this(data: Object) = this()
+  def this(data: AnyRef) = this()
   var animations: js.Array[String] = js.native
   var complete: Boolean = js.native
   var framerate: Double = js.native
@@ -533,8 +538,8 @@ class SpriteSheetBuilder extends EventDispatcher {
   var spriteSheet: SpriteSheet = js.native
   var timeSlice: Double = js.native
   def addAnimation(name: String, frames: js.Array[Double], next: String = ???, frequency: Double = ???): Unit = js.native
-  def addFrame(source: DisplayObject, sourceRect: Rectangle = ???, scale: Double = ???, setupFunction: js.Function0[Any] = ???, setupData: Object = ???): Double = js.native
-  def addMovieClip(source: MovieClip, sourceRect: Rectangle = ???, scale: Double = ???, setupFunction: js.Function0[Any] = ???, setupData: Object = ???, labelFunction: js.Function0[Any] = ???): Unit = js.native
+  def addFrame(source: DisplayObject, sourceRect: Rectangle = ???, scale: Double = ???, setupFunction: js.Function0[Any] = ???, setupData: AnyRef = ???): Double = js.native
+  def addMovieClip(source: MovieClip, sourceRect: Rectangle = ???, scale: Double = ???, setupFunction: js.Function0[Any] = ???, setupData: AnyRef = ???, labelFunction: js.Function0[Any] = ???): Unit = js.native
   def build(): SpriteSheet = js.native
   def buildAsync(timeSlice: Double = ???): Unit = js.native
   //override def clone(): Unit = js.native
@@ -549,14 +554,16 @@ class SpriteSheetUtils extends js.Object {
 object SpriteSheetUtils extends js.Object {
   def addFlippedFrames(spriteSheet: SpriteSheet, horizontal: Boolean = ???, vertical: Boolean = ???, both: Boolean = ???): Unit = js.native
   def extractFrame(spriteSheet: SpriteSheet, frameOrAnimation: Double): HTMLImageElement = js.native
+  def extractFrame(spriteSheet: SpriteSheet, frameOrAnimation: String): HTMLImageElement = js.native
   def mergeAlpha(rgbImage: HTMLImageElement, alphaImage: HTMLImageElement, canvas: HTMLCanvasElement = ???): HTMLCanvasElement = js.native
 }
 
 @JSName("createjs.SpriteStage")
 class SpriteStage protected () extends Stage {
   def this(canvas: HTMLCanvasElement, preserveDrawingBuffer: Boolean = ???, antialias: Boolean = ???) = this()
+  //def this(canvas: String, preserveDrawingBuffer: Boolean = ???, antialias: Boolean = ???) = this()
   var isWebGL: Boolean = js.native
-  def clearImageTexture(image: Object): Unit = js.native
+  def clearImageTexture(image: AnyRef): Unit = js.native
   def updateViewport(width: Double, height: Double): Unit = js.native
 }
 
@@ -572,9 +579,10 @@ object SpriteStage extends js.Object {
 
 @JSName("createjs.Stage")
 class Stage protected () extends Container {
+  def this(canvas: HTMLCanvasElement) = this()
   def this(canvas: String) = this()
   var autoClear: Boolean = js.native
-  var canvas: HTMLCanvasElement = js.native
+  var canvas: HTMLCanvasElement = js.native // TODO or String
   var drawRect: Rectangle = js.native
   var handleEvent: js.Function = js.native
   var mouseInBounds: Boolean = js.native
@@ -589,7 +597,7 @@ class Stage protected () extends Container {
   override def clone(): Stage = js.native
   def enableDOMEvents(enable: Boolean = ???): Unit = js.native
   def enableMouseOver(frequency: Double = ???): Unit = js.native
-  def tick(props: Object = ???): Unit = js.native
+  def tick(props: AnyRef = ???): Unit = js.native
   def toDataURL(backgroundColor: String, mimeType: String): String = js.native
   def update(arg: js.Any*): Unit = js.native
 }
@@ -610,8 +618,8 @@ class Text protected () extends DisplayObject {
   def getMeasuredHeight(): Double = js.native
   def getMeasuredLineHeight(): Double = js.native
   def getMeasuredWidth(): Double = js.native
-  def getMetrics(): Object = js.native
-  override def set(props: Object): Text = js.native
+  def getMetrics(): AnyRef = js.native
+  override def set(props: AnyRef): Text = js.native
   override def setTransform(x: Double = ???, y: Double = ???, scaleX: Double = ???, scaleY: Double = ???, rotation: Double = ???, skewX: Double = ???, skewY: Double = ???, regX: Double = ???, regY: Double = ???): Text = js.native
 }
 
@@ -646,20 +654,20 @@ object Ticker extends js.Object {
   def addEventListener(`type`: String, listener: Stage, useCapture: Boolean = ???): Stage = js.native
   //def addEventListener(`type`: String, listener: js.Function1[Object, Boolean], useCapture: Boolean = ???): js.Function = js.native
   //def addEventListener(`type`: String, listener: js.Any, useCapture: Boolean = ???): Object = js.native
-  def dispatchEvent(eventObj: Object, target: Object = ???): Boolean = js.native
+  def dispatchEvent(eventObj: AnyRef, target: AnyRef = ???): Boolean = js.native
   def hasEventListener(`type`: String): Boolean = js.native
-  def off(`type`: String, listener: js.Function1[Object, Boolean], useCapture: Boolean = ???): Unit = js.native
+  def off(`type`: String, listener: js.Function1[AnyRef, Boolean], useCapture: Boolean = ???): Unit = js.native
   //def on(`type`: String, listener: js.Function1[Object, Boolean], scope: Object = ???, once: Boolean = ???, data: js.Any = ???, useCapture: Boolean = ???): js.Function = js.native
   //def on(`type`: String, listener: js.Any, scope: Object = ???, once: Boolean = ???, data: js.Any = ???, useCapture: Boolean = ???): Object = js.native
   def removeAllEventListeners(`type`: String = ???): Unit = js.native
-  def removeEventListener(`type`: String, listener: js.Function1[Object, Boolean], useCapture: Boolean = ???): Unit = js.native
+  def removeEventListener(`type`: String, listener: js.Function1[AnyRef, Boolean], useCapture: Boolean = ???): Unit = js.native
   override def toString(): String = js.native
   def willTrigger(`type`: String): Boolean = js.native
 }
 
 @JSName("createjs.TickerEvent")
 class TickerEvent extends js.Object {
-  var target: Object = js.native
+  var target: AnyRef = js.native
   var `type`: String = js.native
   var paused: Boolean = js.native
   var delta: Double = js.native
@@ -737,8 +745,8 @@ class ClosePath extends js.Object {
 
 @JSName("createjs.Graphics.Fill")
 class Fill protected () extends js.Object {
-  def this(style: Object, matrix: Matrix2D = ???) = this()
-  var style: Object = js.native
+  def this(style: AnyRef, matrix: Matrix2D = ???) = this()
+  var style: AnyRef = js.native
   var matrix: Matrix2D = js.native
   def bitmap(image: HTMLImageElement, repetition: String = ???): Fill = js.native
   def linearGradient(colors: js.Array[Double], ratios: js.Array[Double], x0: Double, y0: Double, x1: Double, y1: Double): Fill = js.native
@@ -803,8 +811,8 @@ class RoundRect protected () extends js.Object {
 
 @JSName("createjs.Graphics.Stroke")
 class Stroke protected () extends js.Object {
-  def this(style: Object, ignoreScale: Boolean) = this()
-  var style: Object = js.native
+  def this(style: AnyRef, ignoreScale: Boolean) = this()
+  var style: AnyRef = js.native
   var ignoreScale: Boolean = js.native
   def bitmap(image: HTMLImageElement, repetition: String = ???): Stroke = js.native
   def linearGradient(colors: js.Array[Double], ratios: js.Array[Double], x0: Double, y0: Double, x1: Double, y1: Double): Stroke = js.native
