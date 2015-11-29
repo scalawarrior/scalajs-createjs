@@ -3,20 +3,24 @@ package com.scalawarrior.scalajs.createjs
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
+@js.native
 @JSName("createjs.CSSPlugin")
 class CSSPlugin extends js.Object {
 }
 
+@js.native
 @JSName("createjs.CSSPlugin")
 object CSSPlugin extends js.Object {
   var cssSuffixMap: Object = js.native
   def install(): Unit = js.native
 }
 
+@js.native
 @JSName("createjs.Ease")
 class Ease extends js.Object {
 }
 
+@js.native
 @JSName("createjs.Ease")
 object Ease extends js.Object {
   var backIn: js.Function1[Double, Double] = js.native
@@ -60,15 +64,18 @@ object Ease extends js.Object {
   var sineOut: js.Function1[Double, Double] = js.native
 }
 
+@js.native
 @JSName("createjs.MotionGuidePlugin")
 class MotionGuidePlugin extends js.Object {
 }
 
+@js.native
 @JSName("createjs.MotionGuidePlugin")
 object MotionGuidePlugin extends js.Object {
   def install(): Object = js.native
 }
 
+@js.native
 @JSName("createjs.Timeline")
 class Timeline protected () extends EventDispatcher {
   def this(tweens: js.Array[Tween], labels: Object, props: Object) = this()
@@ -91,6 +98,7 @@ class Timeline protected () extends EventDispatcher {
   def updateDuration(): Unit = js.native
 }
 
+@js.native
 @JSName("createjs.Tween")
 class Tween protected () extends EventDispatcher {
   def this(target: Object, props: Object = ???, pluginData: Object = ???) = this()
@@ -113,6 +121,7 @@ class Tween protected () extends EventDispatcher {
   def wait(duration: Double, passive: Boolean = ???): Tween = js.native
 }
 
+@js.native
 @JSName("createjs.Tween")
 object Tween extends js.Object {
   var IGNORE: Object = js.native
@@ -127,10 +136,12 @@ object Tween extends js.Object {
   def tick(delta: Double, paused: Boolean): Unit = js.native
 }
 
+@js.native
 @JSName("createjs.TweenJS")
 class TweenJS extends js.Object {
 }
 
+@js.native
 @JSName("createjs.TweenJS")
 object TweenJS extends js.Object {
   var buildDate: String = js.native

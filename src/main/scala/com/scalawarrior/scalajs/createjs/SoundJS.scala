@@ -4,6 +4,7 @@ import scala.scalajs.js
 import js.annotation._
 import org.scalajs.dom.raw._
 
+@js.native
 @JSName("createjs.AbstractPlugin")
 class AbstractPlugin extends js.Object {
   def create(src: String, startTime: Double, duration: Double): AbstractSoundInstance = js.native
@@ -19,6 +20,7 @@ class AbstractPlugin extends js.Object {
   def setVolume(value: Double): Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.AbstractSoundInstance")
 class AbstractSoundInstance protected () extends EventDispatcher {
   def this(src: String, startTime: Double, duration: Double, playbackResource: Object) = this()
@@ -52,29 +54,34 @@ class AbstractSoundInstance protected () extends EventDispatcher {
   def stop(): AbstractSoundInstance = js.native
 }
 
+@js.native
 @JSName("createjs.FlashAudioLoader")
 class FlashAudioLoader extends AbstractLoader {
   var flashId: String = js.native
   def setFlash(flash: Object): Unit = js.native
 }
 
+@js.native
 @JSName("createjs.FlashAudioPlugin")
 class FlashAudioPlugin extends AbstractPlugin {
   var flashReady: Boolean = js.native
   var showOutput: Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.FlashAudioPlugin")
 object FlashAudioPlugin extends js.Object {
   var swfPath: String = js.native
   def isSupported(): Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.FlashAudioSoundInstance")
 class FlashAudioSoundInstance protected () extends AbstractSoundInstance {
   def this(src: String, startTime: Double, duration: Double, playbackResource: Object) = this()
 }
 
+@js.native
 @JSName("createjs.FlashPlugin")
 class FlashPlugin extends js.Object {
   var flashReady: Boolean = js.native
@@ -90,6 +97,7 @@ class FlashPlugin extends js.Object {
   def setVolume(value: Double): Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.FlashPlugin")
 object FlashPlugin extends js.Object {
   var buildDate: String = js.native
@@ -98,31 +106,37 @@ object FlashPlugin extends js.Object {
   def isSupported(): Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.HTMLAudioPlugin")
 class HTMLAudioPlugin extends AbstractPlugin {
   var defaultNumChannels: Double = js.native
   var enableIOS: Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.HTMLAudioPlugin")
 object HTMLAudioPlugin extends js.Object {
   var MAX_INSTANCES: Double = js.native
   def isSupported(): Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.HTMLAudioSoundInstance")
 class HTMLAudioSoundInstance protected () extends AbstractSoundInstance {
   def this(src: String, startTime: Double, duration: Double, playbackResource: Object) = this()
 }
 
+@js.native
 @JSName("createjs.HTMLAudioTagPool")
 class HTMLAudioTagPool extends js.Object {
 }
 
+@js.native
 @JSName("createjs.Sound")
 class Sound extends EventDispatcher {
 }
 
+@js.native
 @JSName("createjs.Sound")
 object Sound extends js.Object {
   var activePlugin: Object = js.native
@@ -171,25 +185,30 @@ object Sound extends js.Object {
   def willTrigger(`type`: String): Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.SoundJS")
 class SoundJS extends js.Object {
 }
 
+@js.native
 @JSName("createjs.SoundJS")
 object SoundJS extends js.Object {
   var buildDate: String = js.native
   var version: String = js.native
 }
 
+@js.native
 @JSName("createjs.WebAudioLoader")
 class WebAudioLoader extends js.Object {
 }
 
+@js.native
 @JSName("createjs.WebAudioLoader")
 object WebAudioLoader extends js.Object {
   var context: AudioContext = js.native
 }
 
+@js.native
 @JSName("createjs.WebAudioPlugin")
 class WebAudioPlugin extends AbstractPlugin {
   var context: AudioContext = js.native
@@ -197,6 +216,7 @@ class WebAudioPlugin extends AbstractPlugin {
   var gainNode: GainNode = js.native
 }
 
+@js.native
 @JSName("createjs.WebAudioPlugin")
 object WebAudioPlugin extends js.Object {
   var context: AudioContext = js.native
@@ -204,6 +224,7 @@ object WebAudioPlugin extends js.Object {
   def playEmptySound(): Unit = js.native
 }
 
+@js.native
 @JSName("createjs.WebAudioSoundInstance")
 class WebAudioSoundInstance protected () extends AbstractSoundInstance {
   def this(src: String, startTime: Double, duration: Double, playbackResource: Object) = this()
@@ -212,6 +233,7 @@ class WebAudioSoundInstance protected () extends AbstractSoundInstance {
   var sourceNode: AudioNode = js.native
 }
 
+@js.native
 @JSName("createjs.WebAudioSoundInstance")
 object WebAudioSoundInstance extends js.Object {
   var context: AudioContext = js.native

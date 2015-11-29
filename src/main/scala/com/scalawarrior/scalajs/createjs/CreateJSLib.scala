@@ -8,6 +8,7 @@ import js.annotation._
 //  def initialize(target: Object): Unit = js.native
 //}
 
+@js.native
 @JSName("createjs.Event")
 class Event protected () extends js.Object {
   def this(`type`: String, bubbles: Boolean, cancelable: Boolean) = this()
@@ -48,6 +49,7 @@ class Event protected () extends js.Object {
   override def toString(): String = js.native
 }
 
+@js.native
 @JSName("createjs.EventDispatcher")
 class EventDispatcher extends js.Object {
  def addEventListener(`type`: String, listener: js.Function1[Object, Boolean], useCapture: Boolean = ???): js.Function = js.native

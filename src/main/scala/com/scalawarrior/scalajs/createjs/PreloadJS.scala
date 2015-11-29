@@ -5,6 +5,7 @@ import org.scalajs.dom.raw.HTMLAudioElement
 import scala.scalajs.js
 import js.annotation._
 
+@js.native
 @JSName("createjs.AbstractLoader")
 class AbstractLoader extends EventDispatcher {
   var canceled: Boolean = js.native
@@ -25,6 +26,7 @@ class AbstractLoader extends EventDispatcher {
   override def toString(): String = js.native
 }
 
+@js.native
 @JSName("createjs.AbstractLoader")
 object AbstractLoader extends js.Object {
   var BINARY: String = js.native
@@ -42,11 +44,13 @@ object AbstractLoader extends js.Object {
   var XML: String = js.native
 }
 
+@js.native
 @JSName("createjs.AbstractMediaLoader")
 class AbstractMediaLoader protected () extends js.Object {
   def this(loadItem: Object, preferXHR: Boolean, `type`: String) = this()
 }
 
+@js.native
 @JSName("createjs.AbstractRequest")
 class AbstractRequest protected () extends js.Object {
   def this(item: LoadItem) = this()
@@ -55,16 +59,19 @@ class AbstractRequest protected () extends js.Object {
   def load(): Unit = js.native
 }
 
+@js.native
 @JSName("createjs.BinaryLoader")
 class BinaryLoader protected () extends js.Object {
   def this(loadItem: Object) = this()
 }
 
+@js.native
 @JSName("createjs.BinaryLoader")
 object BinaryLoader extends js.Object {
   def canLoadItem(item: Object): Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.CSSLoader")
 class CSSLoader protected () extends js.Object {
   def this(loadItem: Object, preferXHR: Boolean) = this()
@@ -77,6 +84,7 @@ class CSSLoader protected () extends js.Object {
 //  def parseXML(text: String, `type`: String): XMLDocument = js.native
 //}
 
+@js.native
 @JSName("createjs.ErrorEvent")
 class ErrorEvent protected () extends js.Object {
   def this(title: String = ???, message: String = ???, data: Object = ???) = this()
@@ -85,46 +93,55 @@ class ErrorEvent protected () extends js.Object {
   var title: String = js.native
 }
 
+@js.native
 @JSName("createjs.ImageLoader")
 class ImageLoader protected () extends js.Object {
   def this(loadItem: Object, preferXHR: Boolean) = this()
 }
 
+@js.native
 @JSName("createjs.ImageLoader")
 object ImageLoader extends js.Object {
   def canLoadItem(item: Object): Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.JavaScriptLoader")
 class JavaScriptLoader protected () extends js.Object {
   def this(loadItem: Object, preferXHR: Boolean) = this()
 }
 
+@js.native
 @JSName("createjs.JavaScriptLoader")
 object JavaScriptLoader extends js.Object {
   def canLoadItem(item: Object): Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.JSONLoader")
 class JSONLoader protected () extends js.Object {
   def this(loadItem: Object) = this()
 }
 
+@js.native
 @JSName("createjs.JSONLoader")
 object JSONLoader extends js.Object {
   def canLoadItem(item: Object): Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.JSONPLoader")
 class JSONPLoader protected () extends js.Object {
   def this(loadItem: Object) = this()
 }
 
+@js.native
 @JSName("createjs.JSONPLoader")
 object JSONPLoader extends js.Object {
   def canLoadItem(item: Object): Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.LoadItem")
 class LoadItem extends js.Object {
   var callback: String = js.native
@@ -143,11 +160,13 @@ class LoadItem extends js.Object {
   def set(props: Object): LoadItem = js.native
 }
 
+@js.native
 @JSName("createjs.LoadItem")
 object LoadItem extends js.Object {
   def create(value: Object): Object = js.native
 }
 
+@js.native
 @JSName("createjs.LoadQueue")
 class LoadQueue protected () extends AbstractLoader {
   def this(preferXHR: Boolean = ???, basePath: String = ???, crossOrigin: String = ???) = this()
@@ -170,31 +189,37 @@ class LoadQueue protected () extends AbstractLoader {
   def unregisterLoader(loader: AbstractLoader): Unit = js.native
 }
 
+@js.native
 @JSName("createjs.ManifestLoader")
 class ManifestLoader protected () extends js.Object {
   def this(loadItem: LoadItem) = this()
 }
 
+@js.native
 @JSName("createjs.ManifestLoader")
 object ManifestLoader extends js.Object {
   def canLoadItem(item: LoadItem): Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.MediaTagRequest")
 class MediaTagRequest protected () extends js.Object {
   def this(loadItem: LoadItem, tag: HTMLAudioElement, srcAttribute: String) = this()
 }
 
+@js.native
 @JSName("createjs.PreloadJS")
 class PreloadJS extends js.Object {
 }
 
+@js.native
 @JSName("createjs.PreloadJS")
 object PreloadJS extends js.Object {
   var buildDate: String = js.native
   var version: String = js.native
 }
 
+@js.native
 @JSName("createjs.ProgressEvent")
 class ProgressEvent protected () extends js.Object {
   def this(loaded: Double, total: Double = ???) = this()
@@ -204,10 +229,12 @@ class ProgressEvent protected () extends js.Object {
   override def clone(): ProgressEvent = js.native
 }
 
+@js.native
 @JSName("createjs.RequestUtils")
 class RequestUtils extends js.Object {
 }
 
+@js.native
 @JSName("createjs.RequestUtils")
 object RequestUtils extends js.Object {
   var ABSOLUTE_PATH: js.RegExp = js.native
@@ -226,60 +253,72 @@ object RequestUtils extends js.Object {
   def parseURI(path: String): Object = js.native
 }
 
+@js.native
 @JSName("createjs.SoundLoader")
 class SoundLoader protected () extends js.Object {
   def this(loadItem: Object, preferXHR: Boolean) = this()
 }
 
+@js.native
 @JSName("createjs.SoundLoader")
 object SoundLoader extends js.Object {
   def canLoadItem(item: Object): Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.SpriteSheetLoader")
 class SpriteSheetLoader protected () extends js.Object {
   def this(loadItem: Object) = this()
 }
 
+@js.native
 @JSName("createjs.SpriteSheetLoader")
 object SpriteSheetLoader extends js.Object {
   def canLoadItem(item: Object): Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.SVGLoader")
 class SVGLoader protected () extends js.Object {
   def this(loadItem: Object, preferXHR: Boolean) = this()
 }
 
+@js.native
 @JSName("createjs.SVGLoader")
 object SVGLoader extends js.Object {
   def canLoadItem(item: Object): Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.TagRequest")
 class TagRequest extends js.Object {
 }
 
+@js.native
 @JSName("createjs.TextLoader")
 class TextLoader protected () extends js.Object {
   def this(loadItem: Object) = this()
 }
 
+@js.native
 @JSName("createjs.TextLoader")
 object TextLoader extends js.Object {
   def canLoadItem(item: Object): Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.VideoLoader")
 class VideoLoader protected () extends js.Object {
   def this(loadItem: Object, preferXHR: Boolean) = this()
 }
 
+@js.native
 @JSName("createjs.VideoLoader")
 object VideoLoader extends js.Object {
   def canLoadItem(item: Object): Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.XHRRequest")
 class XHRRequest protected () extends AbstractLoader {
   def this(item: Object) = this()
@@ -287,11 +326,13 @@ class XHRRequest protected () extends AbstractLoader {
   def getResponseHeader(header: String): String = js.native
 }
 
+@js.native
 @JSName("createjs.XMLLoader")
 class XMLLoader protected () extends js.Object {
   def this(loadItem: Object) = this()
 }
 
+@js.native
 @JSName("createjs.XMLLoader")
 object XMLLoader extends js.Object {
   def canLoadItem(item: Object): Boolean = js.native

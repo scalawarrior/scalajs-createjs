@@ -5,11 +5,11 @@ name := "Scala.js CreateJS"
 
 normalizedName := "scalajs-createjs"
 
-version := "0.0.1"
+version := "0.0.2"
 
 organization := "com.scalawarrior"
 
-scalaVersion := "2.11.5"
+scalaVersion := "2.11.7"
 
 //crossScalaVersions := Seq("2.10.4", "2.11.5")
 
@@ -18,6 +18,19 @@ libraryDependencies +=
 
 //jsDependencies +=
 //  "org.webjars" % "jquery" % "2.1.3" / "2.1.3/jquery.js"
+
+scalacOptions ++= Seq(
+  "-deprecation",
+  "-encoding", "UTF-8",
+  "-feature",
+  "-unchecked",
+  "-Xlint",
+  "-Yno-adapted-args",
+  "-Ywarn-numeric-widen",
+  "-Ywarn-value-discard",
+  "-Xfuture",
+  "-Ywarn-unused-import"
+)
 
 publishTo <<= (version) { version: String =>
   val repoInfo =

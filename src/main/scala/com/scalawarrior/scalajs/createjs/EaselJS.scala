@@ -4,9 +4,11 @@ import org.scalajs.dom.raw._
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
+@js.native
 class NativeMouseEvent extends MouseEvent {
 }
 
+@js.native
 @JSName("createjs.AlphaMapFilter")
 class AlphaMapFilter protected () extends Filter {
   def this(alphaMap: HTMLImageElement) = this()
@@ -14,6 +16,7 @@ class AlphaMapFilter protected () extends Filter {
   override def clone(): AlphaMapFilter = js.native
 }
 
+@js.native
 @JSName("createjs.AlphaMaskFilter")
 class AlphaMaskFilter protected () extends Filter {
   def this(mask: HTMLImageElement) = this()
@@ -22,6 +25,7 @@ class AlphaMaskFilter protected () extends Filter {
   override def clone(): AlphaMaskFilter = js.native
 }
 
+@js.native
 @JSName("createjs.Bitmap")
 class Bitmap protected () extends DisplayObject {
   def this(imageOrUrl: HTMLImageElement) = this()
@@ -33,6 +37,7 @@ class Bitmap protected () extends DisplayObject {
   override def clone(): Bitmap = js.native
 }
 
+@js.native
 @JSName("createjs.BitmapText")
 class BitmapText protected () extends DisplayObject {
   def this(text: String = ???, spriteSheet: SpriteSheet = ???) = this()
@@ -43,11 +48,13 @@ class BitmapText protected () extends DisplayObject {
   var text: String = js.native
 }
 
+@js.native
 @JSName("createjs.BitmapText")
 object BitmapText extends js.Object {
   var maxPoolSize: Double = js.native
 }
 
+@js.native
 @JSName("createjs.BlurFilter")
 class BlurFilter protected () extends Filter {
   def this(blurX: Double = ???, blurY: Double = ???, quality: Double = ???) = this()
@@ -57,6 +64,7 @@ class BlurFilter protected () extends Filter {
   override def clone(): BlurFilter = js.native
 }
 
+@js.native
 @JSName("createjs.ButtonHelper")
 class ButtonHelper protected () extends js.Object {
   def this(target: Sprite, outLabel: String = ???, overLabel: String = ???, downLabel: String = ???, play: Boolean = ???, hitArea: DisplayObject = ???, hitLabel: String = ???) = this()
@@ -71,6 +79,7 @@ class ButtonHelper protected () extends js.Object {
   override def toString(): String = js.native
 }
 
+@js.native
 @JSName("createjs.ColorFilter")
 class ColorFilter protected () extends Filter {
   def this(redMultiplier: Double = ???, greenMultiplier: Double = ???, blueMultiplier: Double = ???, alphaMultiplier: Double = ???, redOffset: Double = ???, greenOffset: Double = ???, blueOffset: Double = ???, alphaOffset: Double = ???) = this()
@@ -85,6 +94,7 @@ class ColorFilter protected () extends Filter {
   override def clone(): ColorFilter = js.native
 }
 
+@js.native
 @JSName("createjs.ColorMatrix")
 class ColorMatrix protected () extends js.Object {
   def this(brightness: Double = ???, contrast: Double = ???, saturation: Double = ???, hue: Double = ???) = this()
@@ -102,6 +112,7 @@ class ColorMatrix protected () extends js.Object {
   override def toString(): String = js.native
 }
 
+@js.native
 @JSName("createjs.ColorMatrixFilter")
 class ColorMatrixFilter protected () extends Filter {
   def this(matrix: js.Array[Double]) = this()
@@ -110,6 +121,7 @@ class ColorMatrixFilter protected () extends Filter {
   override def clone(): ColorMatrixFilter = js.native
 }
 
+@js.native
 @JSName("createjs.Container")
 class Container extends DisplayObject {
   var children: js.Array[DisplayObject] = js.native
@@ -136,6 +148,7 @@ class Container extends DisplayObject {
   def swapChildrenAt(index1: Double, index2: Double): Unit = js.native
 }
 
+@js.native
 @JSName("createjs.DisplayObject")
 class DisplayObject extends EventDispatcher {
   var alpha: Double = js.native
@@ -188,11 +201,13 @@ class DisplayObject extends EventDispatcher {
   def updateContext(ctx: CanvasRenderingContext2D): Unit = js.native
 }
 
+@js.native
 @JSName("createjs.DisplayObject")
 object DisplayObject extends js.Object {
   var suppressCrossDomainErrors: Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.DisplayProps")
 class DisplayProps protected () extends js.Object {
   def this(visible: Double = ???, alpha: Double = ???, shadow: Double = ???, compositeOperation: Double = ???, matrix: Double = ???) = this()
@@ -208,6 +223,7 @@ class DisplayProps protected () extends js.Object {
   def setValues(visible: Boolean = ???, alpha: Double = ???, shadow: Double = ???, compositeOperation: Double = ???, matrix: Double = ???): DisplayProps = js.native
 }
 
+@js.native
 @JSName("createjs.DOMElement")
 class DOMElement protected () extends DisplayObject {
   def this(htmlElement: HTMLElement) = this()
@@ -217,16 +233,19 @@ class DOMElement protected () extends DisplayObject {
   override def setTransform(x: Double = ???, y: Double = ???, scaleX: Double = ???, scaleY: Double = ???, rotation: Double = ???, skewX: Double = ???, skewY: Double = ???, regX: Double = ???, regY: Double = ???): DOMElement = js.native
 }
 
+@js.native
 @JSName("createjs.EaselJS")
 class EaselJS extends js.Object {
 }
 
+@js.native
 @JSName("createjs.EaselJS")
 object EaselJS extends js.Object {
   var buildDate: String = js.native
   var version: String = js.native
 }
 
+@js.native
 @JSName("createjs.Filter")
 class Filter extends js.Object {
   def applyFilter(ctx: CanvasRenderingContext2D, x: Double, y: Double, width: Double, height: Double, targetCtx: CanvasRenderingContext2D = ???, targetX: Double = ???, targetY: Double = ???): Boolean = js.native
@@ -235,6 +254,7 @@ class Filter extends js.Object {
   override def toString(): String = js.native
 }
 
+@js.native
 @JSName("createjs.Graphics")
 class Graphics extends js.Object {
   var command: Object = js.native
@@ -306,6 +326,7 @@ class Graphics extends js.Object {
   def ss(thickness: Double, caps: String = ???, joints: String = ???, miterLimit: Double = ???, ignoreScale: Boolean = ???): Graphics = js.native
 }
 
+@js.native
 @JSName("createjs.Graphics")
 object Graphics extends js.Object {
   var BASE_64: AnyRef = js.native
@@ -316,6 +337,7 @@ object Graphics extends js.Object {
   def getRGB(r: Double, g: Double, b: Double, alpha: Double = ???): String = js.native
 }
 
+@js.native
 @JSName("createjs.Matrix2D")
 class Matrix2D protected () extends js.Object {
   def this(a: Double = ???, b: Double = ???, c: Double = ???, d: Double = ???, tx: Double = ???, ty: Double = ???) = this()
@@ -348,12 +370,14 @@ class Matrix2D protected () extends js.Object {
   def translate(x: Double, y: Double): Matrix2D = js.native
 }
 
+@js.native
 @JSName("createjs.Matrix2D")
 object Matrix2D extends js.Object {
   var DEG_TO_RAD: Double = js.native
   var identity: Matrix2D = js.native
 }
 
+@js.native
 @JSName("createjs.MouseEvent")
 class MouseEvent protected () extends Event {
   def this(`type`: String, bubbles: Boolean, cancelable: Boolean, stageX: Double, stageY: Double, nativeEvent: NativeMouseEvent, pointerID: Double, primary: Boolean, rawX: Double, rawY: Double) = this()
@@ -381,6 +405,7 @@ class MouseEvent protected () extends Event {
   def willTrigger(`type`: String): Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.MovieClip")
 class MovieClip protected () extends Container {
   def this(mode: String = ???, startPosition: Double = ???, loop: Boolean = ???, labels: AnyRef = ???) = this()
@@ -406,6 +431,7 @@ class MovieClip protected () extends Container {
   def stop(): Unit = js.native
 }
 
+@js.native
 @JSName("createjs.MovieClip")
 object MovieClip extends js.Object {
   var buildDate: String = js.native
@@ -415,11 +441,13 @@ object MovieClip extends js.Object {
   var version: String = js.native
 }
 
+@js.native
 @JSName("createjs.MovieClipPlugin")
 class MovieClipPlugin extends js.Object {
   def tween(tween: Tween, prop: String, value: String, startValues: js.Array[js.Any], endValues: js.Array[js.Any], ratio: Double, wait: AnyRef, end: AnyRef): Unit = js.native
 }
 
+@js.native
 @JSName("createjs.Point")
 class Point protected () extends js.Object {
   def this(x: Double = ???, y: Double = ???) = this()
@@ -431,6 +459,7 @@ class Point protected () extends js.Object {
   override def toString(): String = js.native
 }
 
+@js.native
 @JSName("createjs.Rectangle")
 class Rectangle protected () extends js.Object {
   def this(x: Double = ???, y: Double = ???, width: Double = ???, height: Double = ???) = this()
@@ -450,6 +479,7 @@ class Rectangle protected () extends js.Object {
   def union(rect: Rectangle): Rectangle = js.native
 }
 
+@js.native
 @JSName("createjs.Shadow")
 class Shadow protected () extends js.Object {
   def this(color: String, offsetX: Double, offsetY: Double, blur: Double) = this()
@@ -461,11 +491,13 @@ class Shadow protected () extends js.Object {
   override def toString(): String = js.native
 }
 
+@js.native
 @JSName("createjs.Shadow")
 object Shadow extends js.Object {
   var identity: Shadow = js.native
 }
 
+@js.native
 @JSName("createjs.Shape")
 class Shape protected () extends DisplayObject {
   def this(graphics: Graphics = ???) = this()
@@ -475,6 +507,7 @@ class Shape protected () extends DisplayObject {
   override def setTransform(x: Double = ???, y: Double = ???, scaleX: Double = ???, scaleY: Double = ???, rotation: Double = ???, skewX: Double = ???, skewY: Double = ???, regX: Double = ???, regY: Double = ???): Shape = js.native
 }
 
+@js.native
 @JSName("createjs.Sprite")
 class Sprite protected () extends DisplayObject {
   def this(spriteSheet: SpriteSheet, frameOrAnimation: String = ???) = this()
@@ -496,12 +529,14 @@ class Sprite protected () extends DisplayObject {
   def stop(): Unit = js.native
 }
 
+@js.native
 @JSName("createjs.SpriteContainer")
 class SpriteContainer protected () extends Container {
   def this(spriteSheet: SpriteSheet = ???) = this()
   var spriteSheet: SpriteSheet = js.native
 }
 
+@js.native
 trait SpriteSheetAnimation extends js.Object {
   var frames: js.Array[Double] = js.native
   var speed: Double = js.native
@@ -509,11 +544,13 @@ trait SpriteSheetAnimation extends js.Object {
   var next: String = js.native
 }
 
+@js.native
 trait SpriteSheetFrame extends js.Object {
   var image: HTMLImageElement = js.native
   var rect: Rectangle = js.native
 }
 
+@js.native
 @JSName("createjs.SpriteSheet")
 class SpriteSheet protected () extends EventDispatcher {
   def this(data: AnyRef) = this()
@@ -528,6 +565,7 @@ class SpriteSheet protected () extends EventDispatcher {
   def getNumFrames(animation: String): Double = js.native
 }
 
+@js.native
 @JSName("createjs.SpriteSheetBuilder")
 class SpriteSheetBuilder extends EventDispatcher {
   var maxHeight: Double = js.native
@@ -546,10 +584,12 @@ class SpriteSheetBuilder extends EventDispatcher {
   def stopAsync(): Unit = js.native
 }
 
+@js.native
 @JSName("createjs.SpriteSheetUtils")
 class SpriteSheetUtils extends js.Object {
 }
 
+@js.native
 @JSName("createjs.SpriteSheetUtils")
 object SpriteSheetUtils extends js.Object {
   def addFlippedFrames(spriteSheet: SpriteSheet, horizontal: Boolean = ???, vertical: Boolean = ???, both: Boolean = ???): Unit = js.native
@@ -558,6 +598,7 @@ object SpriteSheetUtils extends js.Object {
   def mergeAlpha(rgbImage: HTMLImageElement, alphaImage: HTMLImageElement, canvas: HTMLCanvasElement = ???): HTMLCanvasElement = js.native
 }
 
+@js.native
 @JSName("createjs.SpriteStage")
 class SpriteStage protected () extends Stage {
   def this(canvas: HTMLCanvasElement, preserveDrawingBuffer: Boolean = ???, antialias: Boolean = ???) = this()
@@ -567,6 +608,7 @@ class SpriteStage protected () extends Stage {
   def updateViewport(width: Double, height: Double): Unit = js.native
 }
 
+@js.native
 @JSName("createjs.SpriteStage")
 object SpriteStage extends js.Object {
   var INDICES_PER_BOX: Double = js.native
@@ -577,6 +619,7 @@ object SpriteStage extends js.Object {
   var POINTS_PER_BOX: Double = js.native
 }
 
+@js.native
 @JSName("createjs.Stage")
 class Stage protected () extends Container {
   def this(canvas: HTMLCanvasElement) = this()
@@ -602,6 +645,7 @@ class Stage protected () extends Container {
   def update(arg: js.Any*): Unit = js.native
 }
 
+@js.native
 @JSName("createjs.Text")
 class Text protected () extends DisplayObject {
   def this(text: String = ???, font: String = ???, color: String = ???) = this()
@@ -623,10 +667,12 @@ class Text protected () extends DisplayObject {
   override def setTransform(x: Double = ???, y: Double = ???, scaleX: Double = ???, scaleY: Double = ???, rotation: Double = ???, skewX: Double = ???, skewY: Double = ???, regX: Double = ???, regY: Double = ???): Text = js.native
 }
 
+@js.native
 @JSName("createjs.Ticker")
 class Ticker extends js.Object {
 }
 
+@js.native
 @JSName("createjs.Ticker")
 object Ticker extends js.Object {
   var framerate: Double = js.native
@@ -665,6 +711,7 @@ object Ticker extends js.Object {
   def willTrigger(`type`: String): Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.TickerEvent")
 class TickerEvent extends js.Object {
   var target: AnyRef = js.native
@@ -675,10 +722,12 @@ class TickerEvent extends js.Object {
   var runTime: Double = js.native
 }
 
+@js.native
 @JSName("createjs.Touch")
 class Touch extends js.Object {
 }
 
+@js.native
 @JSName("createjs.Touch")
 object Touch extends js.Object {
   def disable(stage: Stage): Unit = js.native
@@ -686,15 +735,18 @@ object Touch extends js.Object {
   def isSupported(): Boolean = js.native
 }
 
+@js.native
 @JSName("createjs.UID")
 class UID extends js.Object {
 }
 
+@js.native
 @JSName("createjs.UID")
 object UID extends js.Object {
   def get(): Double = js.native
 }
 
+@js.native
 @JSName("createjs.Graphics.Arc")
 class Arc protected () extends js.Object {
   def this(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, anticlockwise: Double) = this()
@@ -706,6 +758,7 @@ class Arc protected () extends js.Object {
   var y: Double = js.native
 }
 
+@js.native
 @JSName("createjs.Graphics.ArcTo")
 class ArcTo protected () extends js.Object {
   def this(x1: Double, y1: Double, x2: Double, y2: Double, radius: Double) = this()
@@ -716,10 +769,12 @@ class ArcTo protected () extends js.Object {
   var radius: Double = js.native
 }
 
+@js.native
 @JSName("createjs.Graphics.BeginPath")
 class BeginPath extends js.Object {
 }
 
+@js.native
 @JSName("createjs.Graphics.BezierCurveTo")
 class BezierCurveTo protected () extends js.Object {
   def this(cp1x: Double, cp1y: Double, cp2x: Double, cp2y: Double, x: Double, y: Double) = this()
@@ -731,6 +786,7 @@ class BezierCurveTo protected () extends js.Object {
   var y: Double = js.native
 }
 
+@js.native
 @JSName("createjs.Graphics.Circle")
 class Circle protected () extends js.Object {
   def this(x: Double, y: Double, radius: Double) = this()
@@ -739,10 +795,12 @@ class Circle protected () extends js.Object {
   var radius: Double = js.native
 }
 
+@js.native
 @JSName("createjs.Graphics.ClosePath")
 class ClosePath extends js.Object {
 }
 
+@js.native
 @JSName("createjs.Graphics.Fill")
 class Fill protected () extends js.Object {
   def this(style: AnyRef, matrix: Matrix2D = ???) = this()
@@ -753,6 +811,7 @@ class Fill protected () extends js.Object {
   def radialGradient(colors: js.Array[Double], ratios: js.Array[Double], x0: Double, y0: Double, r0: Double, x1: Double, y1: Double, r1: Double): Fill = js.native
 }
 
+@js.native
 @JSName("createjs.Graphics.LineTo")
 class LineTo protected () extends js.Object {
   def this(x: Double, y: Double) = this()
@@ -760,6 +819,7 @@ class LineTo protected () extends js.Object {
   var y: Double = js.native
 }
 
+@js.native
 @JSName("createjs.Graphics.MoveTo")
 class MoveTo protected () extends js.Object {
   def this(x: Double, y: Double) = this()
@@ -767,6 +827,7 @@ class MoveTo protected () extends js.Object {
   var y: Double = js.native
 }
 
+@js.native
 @JSName("createjs.Graphics.PolyStar")
 class PolyStar protected () extends js.Object {
   def this(x: Double, y: Double, radius: Double, sides: Double, pointSize: Double, angle: Double) = this()
@@ -778,6 +839,7 @@ class PolyStar protected () extends js.Object {
   var y: Double = js.native
 }
 
+@js.native
 @JSName("createjs.Graphics.QuadraticCurveTo")
 class QuadraticCurveTo protected () extends js.Object {
   def this(cpx: Double, cpy: Double, x: Double, y: Double) = this()
@@ -787,6 +849,7 @@ class QuadraticCurveTo protected () extends js.Object {
   var y: Double = js.native
 }
 
+@js.native
 @JSName("createjs.Graphics.Rect")
 class Rect protected () extends js.Object {
   def this(x: Double, y: Double, w: Double, h: Double) = this()
@@ -796,6 +859,7 @@ class Rect protected () extends js.Object {
   var h: Double = js.native
 }
 
+@js.native
 @JSName("createjs.Graphics.RoundRect")
 class RoundRect protected () extends js.Object {
   def this(x: Double, y: Double, w: Double, h: Double, radiusTL: Double, radiusTR: Double, radiusBR: Double, radiusBL: Double) = this()
@@ -809,6 +873,7 @@ class RoundRect protected () extends js.Object {
   var radiusBL: Double = js.native
 }
 
+@js.native
 @JSName("createjs.Graphics.Stroke")
 class Stroke protected () extends js.Object {
   def this(style: AnyRef, ignoreScale: Boolean) = this()
@@ -819,6 +884,7 @@ class Stroke protected () extends js.Object {
   def radialGradient(colors: js.Array[Double], ratios: js.Array[Double], x0: Double, y0: Double, r0: Double, x1: Double, y1: Double, r1: Double): Stroke = js.native
 }
 
+@js.native
 @JSName("createjs.Graphics.StrokeStyle")
 class StrokeStyle protected () extends js.Object {
   def this(width: Double, caps: String, joints: Double, miterLimit: Double) = this()

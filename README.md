@@ -11,7 +11,7 @@ Add the following to your sbt build definition:
 ```scala
 resolvers += "amateras-repo" at "http://amateras.sourceforge.jp/mvn/"
 
-libraryDependencies += "com.scalawarrior" %%% "scalajs-createjs" % "0.0.1"
+libraryDependencies += "com.scalawarrior" %%% "scalajs-createjs" % "0.0.2"
 ```
 and add following import statement to the head of your Scala.js program:
 
