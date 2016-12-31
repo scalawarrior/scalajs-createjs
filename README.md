@@ -51,4 +51,5 @@ loader.addEventListener("complete", (e: Object) => {
   stage.update();
   true
 }
+loader.loadManifest(manifest)
 ```
