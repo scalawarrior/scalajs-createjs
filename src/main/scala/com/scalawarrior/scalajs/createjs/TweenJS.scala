@@ -1,7 +1,8 @@
 package com.scalawarrior.scalajs.createjs
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
+import js.`|`
+import js.annotation._
 
 @js.native
 @JSName("createjs.CSSPlugin")
@@ -87,10 +88,10 @@ class Timeline protected () extends EventDispatcher {
   def addTween(tween: Tween*): Unit = js.native
   def getCurrentLabel(): String = js.native
   def getLabels(): js.Array[Object] = js.native
-  def gotoAndPlay(positionOrLabel: String): Unit = js.native
-  def gotoAndStop(positionOrLabel: String): Unit = js.native
+  def gotoAndPlay(positionOrLabel: String | Double): Unit = js.native
+  def gotoAndStop(positionOrLabel: String | Double): Unit = js.native
   def removeTween(tween: Tween*): Unit = js.native
-  def resolve(positionOrLabel: String): Double = js.native
+  def resolve(positionOrLabel: String | Double): Double = js.native
   def setLabels(o: Object): Unit = js.native
   def setPaused(value: Boolean): Unit = js.native
   def setPosition(value: Double, actionsMode: Double = ???): Boolean = js.native

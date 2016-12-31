@@ -5,16 +5,16 @@ name := "Scala.js CreateJS"
 
 normalizedName := "scalajs-createjs"
 
-version := "0.0.2"
+version := "0.0.2-SNAPSHOT"
 
 organization := "com.scalawarrior"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.8"
 
 //crossScalaVersions := Seq("2.10.4", "2.11.5")
 
 libraryDependencies +=
-  "org.scala-js" %%% "scalajs-dom" % "0.8.1"
+  "org.scala-js" %%% "scalajs-dom" % "0.9.1"
 
 //jsDependencies +=
 //  "org.webjars" % "jquery" % "2.1.3" / "2.1.3/jquery.js"

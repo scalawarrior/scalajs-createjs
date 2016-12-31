@@ -2,7 +2,8 @@ package com.scalawarrior.scalajs.createjs
 
 import org.scalajs.dom.raw._
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
+import js.|
+import js.annotation._
 
 @js.native
 class NativeMouseEvent extends MouseEvent {
@@ -425,8 +426,8 @@ class MovieClip protected () extends Container {
   override def clone(): MovieClip = js.native
   def getCurrentLabel(): String = js.native
   def getLabels(): js.Array[AnyRef] = js.native
-  def gotoAndPlay(positionOrLabel: String): Unit = js.native
-  def gotoAndStop(positionOrLabel: String): Unit = js.native
+  def gotoAndPlay(positionOrLabel: String | Double): Unit = js.native
+  def gotoAndStop(positionOrLabel: String | Double): Unit = js.native
   def play(): Unit = js.native
   def stop(): Unit = js.native
 }
@@ -521,8 +522,8 @@ class Sprite protected () extends DisplayObject {
   def advance(time: Double = ???): Unit = js.native
   override def clone(): Sprite = js.native
   override def getBounds(): Rectangle = js.native
-  def gotoAndPlay(frameOrAnimation: String): Unit = js.native
-  def gotoAndStop(frameOrAnimation: String): Unit = js.native
+  def gotoAndPlay(frameOrAnimation: String | Double): Unit = js.native
+  def gotoAndStop(frameOrAnimation: String | Double): Unit = js.native
   def play(): Unit = js.native
   override def set(props: AnyRef): Sprite = js.native
   override def setTransform(x: Double = ???, y: Double = ???, scaleX: Double = ???, scaleY: Double = ???, rotation: Double = ???, skewX: Double = ???, skewY: Double = ???, regX: Double = ???, regY: Double = ???): Sprite = js.native
