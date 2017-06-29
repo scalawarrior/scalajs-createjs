@@ -5,7 +5,7 @@ import js.annotation._
 import org.scalajs.dom.raw._
 
 @js.native
-@JSName("createjs.AbstractPlugin")
+@JSGlobal("createjs.AbstractPlugin")
 class AbstractPlugin extends js.Object {
   def create(src: String, startTime: Double, duration: Double): AbstractSoundInstance = js.native
   def getVolume(): Double = js.native
@@ -21,7 +21,7 @@ class AbstractPlugin extends js.Object {
 }
 
 @js.native
-@JSName("createjs.AbstractSoundInstance")
+@JSGlobal("createjs.AbstractSoundInstance")
 class AbstractSoundInstance protected () extends EventDispatcher {
   def this(src: String, startTime: Double, duration: Double, playbackResource: Object) = this()
   var duration: Double = js.native
@@ -55,34 +55,34 @@ class AbstractSoundInstance protected () extends EventDispatcher {
 }
 
 @js.native
-@JSName("createjs.FlashAudioLoader")
+@JSGlobal("createjs.FlashAudioLoader")
 class FlashAudioLoader extends AbstractLoader {
   var flashId: String = js.native
   def setFlash(flash: Object): Unit = js.native
 }
 
 @js.native
-@JSName("createjs.FlashAudioPlugin")
+@JSGlobal("createjs.FlashAudioPlugin")
 class FlashAudioPlugin extends AbstractPlugin {
   var flashReady: Boolean = js.native
   var showOutput: Boolean = js.native
 }
 
 @js.native
-@JSName("createjs.FlashAudioPlugin")
+@JSGlobal("createjs.FlashAudioPlugin")
 object FlashAudioPlugin extends js.Object {
   var swfPath: String = js.native
   def isSupported(): Boolean = js.native
 }
 
 @js.native
-@JSName("createjs.FlashAudioSoundInstance")
+@JSGlobal("createjs.FlashAudioSoundInstance")
 class FlashAudioSoundInstance protected () extends AbstractSoundInstance {
   def this(src: String, startTime: Double, duration: Double, playbackResource: Object) = this()
 }
 
 @js.native
-@JSName("createjs.FlashPlugin")
+@JSGlobal("createjs.FlashPlugin")
 class FlashPlugin extends js.Object {
   var flashReady: Boolean = js.native
   var showOutput: Boolean = js.native
@@ -98,7 +98,7 @@ class FlashPlugin extends js.Object {
 }
 
 @js.native
-@JSName("createjs.FlashPlugin")
+@JSGlobal("createjs.FlashPlugin")
 object FlashPlugin extends js.Object {
   var buildDate: String = js.native
   var swfPath: String = js.native
@@ -107,37 +107,37 @@ object FlashPlugin extends js.Object {
 }
 
 @js.native
-@JSName("createjs.HTMLAudioPlugin")
+@JSGlobal("createjs.HTMLAudioPlugin")
 class HTMLAudioPlugin extends AbstractPlugin {
   var defaultNumChannels: Double = js.native
   var enableIOS: Boolean = js.native
 }
 
 @js.native
-@JSName("createjs.HTMLAudioPlugin")
+@JSGlobal("createjs.HTMLAudioPlugin")
 object HTMLAudioPlugin extends js.Object {
   var MAX_INSTANCES: Double = js.native
   def isSupported(): Boolean = js.native
 }
 
 @js.native
-@JSName("createjs.HTMLAudioSoundInstance")
+@JSGlobal("createjs.HTMLAudioSoundInstance")
 class HTMLAudioSoundInstance protected () extends AbstractSoundInstance {
   def this(src: String, startTime: Double, duration: Double, playbackResource: Object) = this()
 }
 
 @js.native
-@JSName("createjs.HTMLAudioTagPool")
+@JSGlobal("createjs.HTMLAudioTagPool")
 class HTMLAudioTagPool extends js.Object {
 }
 
 @js.native
-@JSName("createjs.Sound")
+@JSGlobal("createjs.Sound")
 class Sound extends EventDispatcher {
 }
 
 @js.native
-@JSName("createjs.Sound")
+@JSGlobal("createjs.Sound")
 object Sound extends js.Object {
   var activePlugin: Object = js.native
   var alternateExtensions: js.Array[js.Any] = js.native
@@ -186,30 +186,30 @@ object Sound extends js.Object {
 }
 
 @js.native
-@JSName("createjs.SoundJS")
+@JSGlobal("createjs.SoundJS")
 class SoundJS extends js.Object {
 }
 
 @js.native
-@JSName("createjs.SoundJS")
+@JSGlobal("createjs.SoundJS")
 object SoundJS extends js.Object {
   var buildDate: String = js.native
   var version: String = js.native
 }
 
 @js.native
-@JSName("createjs.WebAudioLoader")
+@JSGlobal("createjs.WebAudioLoader")
 class WebAudioLoader extends js.Object {
 }
 
 @js.native
-@JSName("createjs.WebAudioLoader")
+@JSGlobal("createjs.WebAudioLoader")
 object WebAudioLoader extends js.Object {
   var context: AudioContext = js.native
 }
 
 @js.native
-@JSName("createjs.WebAudioPlugin")
+@JSGlobal("createjs.WebAudioPlugin")
 class WebAudioPlugin extends AbstractPlugin {
   var context: AudioContext = js.native
   var dynamicsCompressorNode: DynamicsCompressorNode = js.native
@@ -217,7 +217,7 @@ class WebAudioPlugin extends AbstractPlugin {
 }
 
 @js.native
-@JSName("createjs.WebAudioPlugin")
+@JSGlobal("createjs.WebAudioPlugin")
 object WebAudioPlugin extends js.Object {
   var context: AudioContext = js.native
   def isSupported(): Boolean = js.native
@@ -225,7 +225,7 @@ object WebAudioPlugin extends js.Object {
 }
 
 @js.native
-@JSName("createjs.WebAudioSoundInstance")
+@JSGlobal("createjs.WebAudioSoundInstance")
 class WebAudioSoundInstance protected () extends AbstractSoundInstance {
   def this(src: String, startTime: Double, duration: Double, playbackResource: Object) = this()
   var gainNode: GainNode = js.native
@@ -234,7 +234,7 @@ class WebAudioSoundInstance protected () extends AbstractSoundInstance {
 }
 
 @js.native
-@JSName("createjs.WebAudioSoundInstance")
+@JSGlobal("createjs.WebAudioSoundInstance")
 object WebAudioSoundInstance extends js.Object {
   var context: AudioContext = js.native
   var destinationNode: AudioNode = js.native

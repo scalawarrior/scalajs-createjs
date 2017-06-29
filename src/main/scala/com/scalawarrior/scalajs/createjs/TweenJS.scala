@@ -5,24 +5,24 @@ import js.`|`
 import js.annotation._
 
 @js.native
-@JSName("createjs.CSSPlugin")
+@JSGlobal("createjs.CSSPlugin")
 class CSSPlugin extends js.Object {
 }
 
 @js.native
-@JSName("createjs.CSSPlugin")
+@JSGlobal("createjs.CSSPlugin")
 object CSSPlugin extends js.Object {
   var cssSuffixMap: Object = js.native
   def install(): Unit = js.native
 }
 
 @js.native
-@JSName("createjs.Ease")
+@JSGlobal("createjs.Ease")
 class Ease extends js.Object {
 }
 
 @js.native
-@JSName("createjs.Ease")
+@JSGlobal("createjs.Ease")
 object Ease extends js.Object {
   var backIn: js.Function1[Double, Double] = js.native
   var backInOut: js.Function1[Double, Double] = js.native
@@ -66,18 +66,18 @@ object Ease extends js.Object {
 }
 
 @js.native
-@JSName("createjs.MotionGuidePlugin")
+@JSGlobal("createjs.MotionGuidePlugin")
 class MotionGuidePlugin extends js.Object {
 }
 
 @js.native
-@JSName("createjs.MotionGuidePlugin")
+@JSGlobal("createjs.MotionGuidePlugin")
 object MotionGuidePlugin extends js.Object {
   def install(): Object = js.native
 }
 
 @js.native
-@JSName("createjs.Timeline")
+@JSGlobal("createjs.Timeline")
 class Timeline protected () extends EventDispatcher {
   def this(tweens: js.Array[Tween], labels: Object, props: Object) = this()
   var duration: Double = js.native
@@ -100,7 +100,7 @@ class Timeline protected () extends EventDispatcher {
 }
 
 @js.native
-@JSName("createjs.Tween")
+@JSGlobal("createjs.Tween")
 class Tween protected () extends EventDispatcher {
   def this(target: Object, props: Object = ???, pluginData: Object = ???) = this()
   var duration: Double = js.native
@@ -123,7 +123,7 @@ class Tween protected () extends EventDispatcher {
 }
 
 @js.native
-@JSName("createjs.Tween")
+@JSGlobal("createjs.Tween")
 object Tween extends js.Object {
   var IGNORE: Object = js.native
   var LOOP: Double = js.native
@@ -138,12 +138,12 @@ object Tween extends js.Object {
 }
 
 @js.native
-@JSName("createjs.TweenJS")
+@JSGlobal("createjs.TweenJS")
 class TweenJS extends js.Object {
 }
 
 @js.native
-@JSName("createjs.TweenJS")
+@JSGlobal("createjs.TweenJS")
 object TweenJS extends js.Object {
   var buildDate: String = js.native
   var version: String = js.native

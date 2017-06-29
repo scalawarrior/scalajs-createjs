@@ -9,12 +9,12 @@ version := "0.0.2-SNAPSHOT"
 
 organization := "com.scalawarrior"
 
-scalaVersion := "2.11.8"
+scalaVersion := "2.12.2"
 
 //crossScalaVersions := Seq("2.10.4", "2.11.5")
 
 libraryDependencies +=
-  "org.scala-js" %%% "scalajs-dom" % "0.9.1"
+  "org.scala-js" %%% "scalajs-dom" % "0.9.2"
 
 //jsDependencies +=
 //  "org.webjars" % "jquery" % "2.1.3" / "2.1.3/jquery.js"

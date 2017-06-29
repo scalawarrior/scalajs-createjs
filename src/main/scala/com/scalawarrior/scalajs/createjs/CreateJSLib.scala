@@ -3,13 +3,13 @@ package com.scalawarrior.scalajs.createjs
 import scala.scalajs.js
 import js.annotation._
 
-//@JSName("createjs.EventDispatcher")
+//@JSGlobal("createjs.EventDispatcher")
 //object EventDispatcher extends js.Object {
 //  def initialize(target: Object): Unit = js.native
 //}
 
 @js.native
-@JSName("createjs.Event")
+@JSGlobal("createjs.Event")
 class Event protected () extends js.Object {
   def this(`type`: String, bubbles: Boolean, cancelable: Boolean) = this()
   var bubbles: Boolean = js.native
@@ -50,7 +50,7 @@ class Event protected () extends js.Object {
 }
 
 @js.native
-@JSName("createjs.EventDispatcher")
+@JSGlobal("createjs.EventDispatcher")
 class EventDispatcher extends js.Object {
  def addEventListener(`type`: String, listener: js.Function1[Object, Boolean], useCapture: Boolean = ???): js.Function = js.native
  //def addEventListener(`type`: String, listener: js.Any, useCapture: Boolean = ???): Object = js.native
@@ -65,8 +65,8 @@ class EventDispatcher extends js.Object {
  def willTrigger(`type`: String): Boolean = js.native
 }
 
-// //@JSName("createjs")
-// @JSName("createjs.EventDispatcher")
+// //@JSGlobal("createjs")
+// @JSGlobal("createjs.EventDispatcher")
 // class EventDispatcher extends js.Object {
 //   def initialize(target: Object): Unit = js.native
 // }
