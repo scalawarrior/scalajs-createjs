@@ -5,7 +5,7 @@ name := "Scala.js CreateJS"
 
 normalizedName := "scalajs-createjs"
 
-version := "0.0.2-SNAPSHOT"
+version := "0.0.3-SNAPSHOT"
 
 organization := "com.scalawarrior"
 
