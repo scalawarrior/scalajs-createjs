@@ -679,7 +679,7 @@ object Ticker extends js.Object {
   var framerate: Double = js.native
   var interval: Double = js.native
   var maxDelta: Double = js.native
-  var paused: Double = js.native
+  var paused: Boolean = js.native
   var RAF: String = js.native
   var RAF_SYNCHED: String = js.native
   var TIMEOUT: String = js.native
