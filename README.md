@@ -50,6 +50,6 @@ loader.addEventListener("complete", (e: Object) => {
   stage.addChild(background, knight);
   stage.update();
   true
-}
+})
 loader.loadManifest(manifest)
 ```
